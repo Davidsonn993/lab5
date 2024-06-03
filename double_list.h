@@ -16,5 +16,7 @@ void insertAtPosition(int data, int position, struct Node** head);
 void freelist(struct Node* head);
 void deleteNodeByValue(int data, struct Node** head);
 struct Node* findNodeByValue(int data, struct Node* head);
+void printListBackward(struct Node* head);
+void printListForward(struct Node* head);
 
 #endif // DOUBLE_LIST_H
