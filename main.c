@@ -31,7 +31,13 @@ struct Node* foundNode = findNodeByValue(5, head);
         printf("Nodo con valor 5 encontrado: %p\n", foundNode);
     } else {
         printf("Nodo no encontrado\n");
-    }
+ }
+
+printf("recorreremos la lista desde el principio hacia atras\n");
+printListForward(head);
+printf("recorreremos la lista de atras hacia el primero\n");
+printListBackward(head);
+
 return 0;
 
 freelist(head);
