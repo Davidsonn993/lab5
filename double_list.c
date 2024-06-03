@@ -2,14 +2,6 @@
 #include <stdlib.h>
 #include "double_list.h"
 
-
-//#struct Node {
-//       int data;
-//       struct Node* next;
-//       struct Node*  prev;
-//};
-
-
 //Funcion para insertar nodo al inicio:
 void insertBeginning(int data, struct Node** cabeza){
         struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));//reservamos espacio en memoria
@@ -144,4 +136,34 @@ struct Node* findNodeByValue(int data, struct Node* head) {
         temp = temp->next;
     }
     return NULL; // No se encontró el nodo con el valor especificado
+}
+//Función para recorrer la lista desde adelante.
+void printListForward(struct Node* head) {
+    struct Node* temp = head;
+    printf("Lista hacia adelante: ");
+    while (temp != NULL) {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+}
+
+//Función para recorrer la lista desde atras
+void printListBackward(struct Node* head) {
+    struct Node* temp = head;
+    if (temp == NULL) {
+        printf("La lista está vacía\n");
+        return;
+    }
+    // Ir al final de la lista
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+    printf("Lista hacia atrás: ");
+    // Imprimir desde el final hacia el inicio
+    while (temp != NULL) {
+        printf("%d ", temp->data);
+        temp = temp->prev;
+    }
+    printf("\n");
 }
